@@ -1,8 +1,8 @@
-const Stock = require('../models/stock.js');
+const Stocks = require('../models/stock.js');
 
 const getAllStock = async(req,res) =>{
     try {
-        const stocks = await Stock.find();
+        const stocks = await Stocks.find();
         res.json(stocks);
     } catch (error) {
         console.error(error);
@@ -21,7 +21,7 @@ const AddStockToWishlist = async(req,res)=>{
             symbol,  
         } = req.body;
 
-        const stock = new Stock({
+        const stock = new Stocks({
             company,
             description,
             initial_price,
