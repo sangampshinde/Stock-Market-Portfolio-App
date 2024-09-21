@@ -1,7 +1,7 @@
 {
   "name": "stock-market-portfolio-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "stock portfolio backend",
   "main": "index.js",
   "scripts": {
     "start":"node index.js"

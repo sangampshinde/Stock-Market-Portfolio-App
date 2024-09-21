@@ -6,11 +6,19 @@ const connectDB = require("./config/db.js"); // Correct import
 const stockRoutes = require("./routes/stockRoutes.js"); 
 
 dotenv.config();
-
 const app = express();
+
+app.use(cors(
+    {
+        origin: "*", // Allow all origins
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true,
+    }
+))
+
 const PORT = process.env.PORT || 5000;
 
-// Connect to MongoDB
+
 
 
 // Middleware
