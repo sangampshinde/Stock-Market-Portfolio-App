@@ -1,68 +1,123 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #d9d7ca;
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
-}
-
-.App {
-    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
     padding: 20px;
-}
-
-h1 {
+    color: #333;
+  }
+  
+  h1, h2 {
     color: #1f454d;
-}
-
-h2 {
-    color: #3c8d93;
-    margin-top: 30px;
-}
-
-ul {
+  }
+  
+  /* App Container */
+  .stocks-container,
+  .watchlist-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  ul {
     list-style-type: none;
     padding: 0;
-}
-
-li {
-    background-color: #3c8d93;
-    color: #d9d7ca;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
+  }
+  
+  /* Stock and Watchlist Items */
+  .stocks-list, .watchlist-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .stock-item,
+  .watchlist-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-button {
+    flex-wrap: wrap;
+    transition: transform 0.3s ease;
+  }
+  
+  .stock-item:hover,
+  .watchlist-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .stock-item span,
+  .watchlist-item span {
+    font-weight: bold;
+  }
+  
+  /* Buttons */
+  button {
+    margin-top: 10px;
     background-color: #1f454d;
     color: #d9d7ca;
     border: none;
-    padding: 8px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-button:hover {
+  }
+  
+  button:hover {
     background-color: #3c8d93;
-}
-
-/* Navigation bar styles */
-nav {
+  }
+  
+  /* Responsive Navigation */
+  nav {
     background-color: #1f454d;
-    padding: 15px 0;
-}
-
-nav a {
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  nav a {
     color: #d9d7ca;
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 15px;
     font-size: 18px;
     transition: color 0.3s ease;
-}
-
-nav a:hover {
+  }
+  
+  nav a:hover {
     color: #3c8d93;
-}
+  }
+  
+  /* Responsive Grid */
+  @media (max-width: 768px) {
+    .stocks-list, .watchlist-list {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .stocks-list, .watchlist-list {
+      grid-template-columns: 1fr;
+    }
+  
+    nav a {
+      margin: 0 10px;
+      font-size: 16px;
+    }
+  
+    button {
+      
+      padding: 8px;
+    }
+  }
+  

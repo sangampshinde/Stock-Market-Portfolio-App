@@ -7,23 +7,20 @@ const Watchlist = ({ watchlist }) => {
   };
 
   return (
-    <>
-      <div className="App">
-        <h1>Stock Market MERN App</h1>
-        <h2>My Watchlist</h2>
-        <ul>
-          {watchlist.map((stock, i) => (
-            <li key={i}>
-              {stock.company} ({stock.symbol}) -{" "}
-              <span style={{ color: getRandomColor() }}>
-                {" "}
-                ${stock.initial_price}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
+    <div className="watchlist-container">
+      <h1>Stock Market MERN App</h1>
+      <h2>My Watchlist</h2>
+      <ul className="watchlist-list">
+        {watchlist.map((stock, i) => (
+          <li key={i} className="watchlist-item">
+            {stock.company} ({stock.symbol}) -{" "}
+            <span style={{ color: getRandomColor() }}>
+              ${stock.initial_price}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
