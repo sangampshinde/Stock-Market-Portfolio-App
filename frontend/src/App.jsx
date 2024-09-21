@@ -13,7 +13,7 @@ const App = () => {
   const [watchlist, setWatchlist] = useState([]);
 
   const addToWatchlist = (stock) => {
-    fetch("http://localhost:5000/api/watchlist", {
+    fetch("https://stock-market-portfolio-app.onrender.com/api/watchlist", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
